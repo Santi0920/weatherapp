@@ -46,7 +46,7 @@
         <!-- Hourly Weather -->
         <div class="max-w-screen-md w-full py-12">
             <div class="mx-8 text-white">
-                <h2 class="mb-4">Hourly Weather</h2>
+                <h2 class="mb-4 text-2xl font-bold">Hourly Weather</h2>
                 <div class="flex gap-10 overflow-x-scroll py-3">
                     <div v-for="hourData in weatherData.hourly" :key="hourData.dt" class="flex flex-col gap-4 items-center">
                         <p class="whitespace-nowrap text-md">
@@ -67,7 +67,7 @@
         <!-- Weekly Weather -->
         <div class="max-w-screen-md w-full py-12">
             <div class="mx-8 text-white">
-                <h2 class="mb-4">7 Day Forecast</h2>
+                <h2 class="mb-4 text-2xl font-bold">7 Day Forecast</h2>
                 <div v-for="day in weatherData.daily" :key="day.dt" class="flex items-center">
                     <p class="flex-1">
                         {{ 
@@ -89,8 +89,10 @@
         </div>
 
         <div class="flex items-center gap-2 py-12 text-white cursor-pointer duration-150 hover:text-red-500" @click="removeCity">
-            <i class="fa-solid fa-trash"></i>
-            <p>Remove City</p>
+            <button class="bg-red-500 hover:bg-red-600 px-6 py-4 rounded-md transition-all">
+                <p class="text-lg font-semibold"><i class="fa-solid fa-trash text-lg"></i> Remove City</p>
+                
+            </button>
         </div>
     </div>
 </template>
